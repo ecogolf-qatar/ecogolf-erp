@@ -1,27 +1,33 @@
+// ============================
+// EcoGolf ERP v1.0 - main.js
+// ============================
+
+// Wait for everything to load first
 document.addEventListener("DOMContentLoaded", () => {
   const splash = document.getElementById("splash");
   const login = document.getElementById("login");
   const dashboard = document.getElementById("dashboard");
   const loginBtn = document.getElementById("loginBtn");
 
-  // Splash auto-transition after 3 seconds
+  // Splash screen - show for 3 seconds then go to login
   setTimeout(() => {
-    splash.classList.add("hidden");
-    login.classList.remove("hidden");
+    splash.classList.add("fade-out");
+    setTimeout(() => {
+      splash.classList.add("hidden");
+      login.classList.remove("hidden");
+      login.classList.add("fade-in");
+    }, 500);
   }, 3000);
 
-  // Simulated login
+  // Login button click -> show dashboard
   if (loginBtn) {
     loginBtn.addEventListener("click", () => {
-      login.classList.add("hidden");
-      dashboard.classList.remove("hidden");
+      login.classList.add("fade-out");
+      setTimeout(() => {
+        login.classList.add("hidden");
+        dashboard.classList.remove("hidden");
+        dashboard.classList.add("fade-in");
+      }, 500);
     });
   }
-
-  // Sidebar navigation (for demo only)
-  document.querySelectorAll(".sidebar li").forEach(item => {
-    item.addEventListener("click", () => {
-      alert(`You clicked: ${item.textContent.trim()}`);
-    });
-  });
 });
