@@ -1,0 +1,36 @@
+body[dir="rtl"] {
+  direction: rtl;
+}
+
+/* Sidebar on the right for Arabic */
+body[dir="rtl"] .sidebar {
+  order: 2;
+  border-left: 1px solid #ccc;
+  border-right: none;
+}
+
+/* Main content shifts left */
+body[dir="rtl"] .main-content {
+  order: 1;
+}
+
+/* Sidebar text alignment */
+body[dir="rtl"] .sidebar ul {
+  text-align: right;
+}
+
+/* Topbar toggles flip to left side */
+body[dir="rtl"] .topbar {
+  justify-content: flex-start;
+}
+
+/* Dashboard cards and charts text right-aligned */
+body[dir="rtl"] .card,
+body[dir="rtl"] .chart {
+  text-align: right;
+}
+
+/* Footer right-aligned for Arabic */
+body[dir="rtl"] footer {
+  text-align: right;
+}
