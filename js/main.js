@@ -1,32 +1,32 @@
-// ============================
 // EcoGolf ERP v1.0 - main.js
-// ============================
-
-// Wait for everything to load first
 document.addEventListener("DOMContentLoaded", () => {
   const splash = document.getElementById("splash");
+  const logo = splash.querySelector("img");
   const login = document.getElementById("login");
   const dashboard = document.getElementById("dashboard");
   const loginBtn = document.getElementById("loginBtn");
 
-  // Splash screen - show for 3 seconds then go to login
+  // Animate logo zoom-in
+  logo.classList.add("zoom-in");
+
+  // Splash transition after 3 seconds
   setTimeout(() => {
-    splash.classList.add("fade-out");
+    splash.style.opacity = 0;
     setTimeout(() => {
       splash.classList.add("hidden");
       login.classList.remove("hidden");
-      login.classList.add("fade-in");
+      login.style.opacity = 1;
     }, 500);
   }, 3000);
 
-  // Login button click -> show dashboard
+  // Login button → Dashboard
   if (loginBtn) {
     loginBtn.addEventListener("click", () => {
-      login.classList.add("fade-out");
+      login.style.opacity = 0;
       setTimeout(() => {
         login.classList.add("hidden");
         dashboard.classList.remove("hidden");
-        dashboard.classList.add("fade-in");
+        dashboard.style.opacity = 1;
       }, 500);
     });
   }
