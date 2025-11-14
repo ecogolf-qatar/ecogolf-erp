@@ -1,84 +1,0 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EcoGolf ERP v1.0 – Prototype Build</title>
-  <link rel="icon" href="assets/favicon.ico" />
-  <link rel="stylesheet" href="css/style.css" />
-  <script defer src="js/theme.js"></script>
-  <script defer src="js/language.js"></script>
-  <script defer src="js/main.js"></script>
-</head>
-
-<body class="light-mode">
-  <!-- Splash -->
-  <section id="splash">
-    <div class="centered">
-      <img src="assets/ecogolf-logo.png" alt="EcoGolf Logo" class="logo-large" />
-      <p class="tagline">The service you can trust</p>
-    </div>
-  </section>
-
-  <!-- Login -->
-  <section id="login" class="hidden">
-    <div class="login-container">
-      <img src="assets/ecogolf-logo.png" alt="EcoGolf Logo" class="logo-small" />
-      <h2>EcoGolf ERP System</h2>
-      <input type="email" placeholder="Email" />
-      <input type="password" placeholder="Password" />
-      <button id="loginBtn">Sign In</button>
-    </div>
-  </section>
-
-  <!-- Dashboard -->
-  <section id="dashboard" class="hidden">
-    <aside class="sidebar">
-      <div class="sidebar-logo">
-        <img src="assets/ecogolf-logo.png" alt="EcoGolf Logo" />
-      </div>
-      <nav>
-        <ul>
-          <li data-page="dashboard">🏠 Dashboard / لوحة التحكم</li>
-          <li data-page="warehouse">🏗️ Warehouse / المستودع</li>
-          <li data-page="accounting">💰 Accounting / المحاسبة</li>
-          <li data-page="payroll">🧾 Payroll / الرواتب</li>
-          <li data-page="projects">📁 Projects / المشاريع</li>
-          <li data-page="reports">📊 Reports / التقارير</li>
-          <li data-page="logs">🕓 User Logs / سجلات المستخدم</li>
-          <li data-page="settings">⚙️ Settings / الإعدادات</li>
-        </ul>
-      </nav>
-    </aside>
-
-    <main class="main-content">
-      <header class="topbar">
-        <div class="toggles">
-          <button id="langToggle">AR</button>
-          <button id="themeToggle">🌙</button>
-        </div>
-      </header>
-
-      <section class="dashboard-content">
-        <h1>Dashboard / لوحة التحكم</h1>
-        <div class="cards">
-          <div class="card">Total Stock / إجمالي المخزون<br /><span></span></div>
-          <div class="card">Pending Requests / الطلبات المعلقة<br /><span></span></div>
-          <div class="card">Monthly Expenses / المصروفات الشهرية<br /><span></span></div>
-          <div class="card">Active Projects / المشاريع النشطة<br /><span></span></div>
-        </div>
-
-        <div class="charts">
-          <div class="chart" id="barChart">Inventory by Category / المخزون حسب الفئة</div>
-          <div class="chart" id="pieChart">Expense Breakdown / توزيع المصروفات</div>
-        </div>
-      </section>
-
-      <footer>
-        © 2025 EcoGolf Trading and Contracting WLL · info@ecogolf-co.com · +974 3003 7227 · Doha, Qatar<br />
-        EcoGolf ERP v1.0 – Prototype Build · The service you can trust
-      </footer>
-    </main>
-  </section>
-</body>
-</html>
