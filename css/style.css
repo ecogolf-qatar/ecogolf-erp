@@ -1,13 +1,16 @@
-/* ============================
-   EcoGolf ERP v1.0 - style.css
-   ============================ */
+/* EcoGolf ERP v1.0 - style.css */
 
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #7C459A, #1D8BE2);
   color: #333;
-  overflow: hidden;
+}
+
+/* Reusable */
+.hidden {
+  display: none !important;
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 
 /* Splash Screen */
@@ -17,35 +20,26 @@ body {
   align-items: center;
   height: 100vh;
   flex-direction: column;
+  background: linear-gradient(135deg, #7C459A, #1D8BE2);
   color: #fff;
-  transition: opacity 0.5s ease;
+  transition: opacity 0.6s ease;
 }
 
 #splash img {
   width: 200px;
-  margin-bottom: 15px;
+  opacity: 0;
+  transform: scale(0.7);
 }
 
-.hidden {
-  display: none;
+/* Zoom-in animation for logo */
+.zoom-in {
+  animation: zoomIn 2s ease forwards;
 }
 
-.fade-in {
-  animation: fadeIn 0.6s ease forwards;
-}
-
-.fade-out {
-  animation: fadeOut 0.6s ease forwards;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes fadeOut {
-  from { opacity: 1; }
-  to { opacity: 0; }
+@keyframes zoomIn {
+  0% { opacity: 0; transform: scale(0.7); }
+  50% { opacity: 1; transform: scale(1.05); }
+  100% { opacity: 1; transform: scale(1); }
 }
 
 /* Login Screen */
@@ -55,22 +49,29 @@ body {
   align-items: center;
   height: 100vh;
   background: #f7f7f7;
+  opacity: 0;
+  transition: opacity 0.6s ease;
 }
 
 .login-container {
   text-align: center;
   background: #fff;
-  padding: 30px 40px;
-  border-radius: 15px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  padding: 40px 50px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.login-container img {
+  width: 120px;
+  margin-bottom: 15px;
 }
 
 .login-container input {
   display: block;
-  margin: 10px auto;
+  margin: 8px auto;
   padding: 10px;
-  width: 240px;
-  border-radius: 8px;
+  width: 230px;
+  border-radius: 6px;
   border: 1px solid #ccc;
   outline: none;
 }
@@ -79,23 +80,25 @@ body {
   background: #7C459A;
   color: #fff;
   border: none;
-  padding: 10px 20px;
-  border-radius: 8px;
+  padding: 10px 25px;
+  border-radius: 6px;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background 0.3s ease;
 }
 
 .login-container button:hover {
   background: #1D8BE2;
 }
 
-/* Dashboard layout */
+/* Dashboard */
 #dashboard {
   display: flex;
   height: 100vh;
+  background: #f2f4f7;
+  opacity: 0;
+  transition: opacity 0.6s ease;
 }
 
-/* Sidebar */
 .sidebar {
   width: 220px;
   background: #7C459A;
@@ -125,12 +128,9 @@ body {
   background: #1D8BE2;
 }
 
-/* Main Content */
 .main-content {
   flex: 1;
   padding: 20px;
-  background: #f2f4f7;
-  overflow-y: auto;
 }
 
 .topbar {
@@ -148,7 +148,6 @@ button#langToggle, button#themeToggle {
   cursor: pointer;
 }
 
-/* Cards and Charts */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -171,7 +170,6 @@ button#langToggle, button#themeToggle {
   margin-top: 15px;
 }
 
-/* Footer */
 footer {
   text-align: center;
   font-size: 12px;
